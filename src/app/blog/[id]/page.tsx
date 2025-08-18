@@ -1,9 +1,15 @@
 import React from 'react'
 import blogs from '@/app/data/blogs'
-import { BlogParams } from '@/app/types/blog'
+// import { BlogParams } from '@/app/types/blog'
 import Link from 'next/link'
 
-const Card = ({ params }: BlogParams) => {
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+const Card = ({ params }: Props) => {
     const blog = blogs.find((b) => b.id === params.id);
     console.log(blog);
 
