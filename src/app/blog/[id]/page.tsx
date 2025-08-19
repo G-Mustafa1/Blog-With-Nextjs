@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Blog } from "@/types/blog";
 import BlogCard from "@/app/components/BlogCard";
 
+
 interface BlogDetailPageProps {
   params: {
     id: string;
