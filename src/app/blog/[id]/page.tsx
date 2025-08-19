@@ -1,10 +1,10 @@
 import React from "react";
 import blogs from "@/data/blogs";
-import { Blog, BlogPageParams } from "@/types/blog";
-import BlogCard from "@/app/components/BlogCard";
+import { PageProps, Blog } from "@/types/blog";
 import Link from "next/link";
+import BlogCard from "@/app/components/BlogCard";
 
-export default function BlogDetailPage({ params }: BlogPageParams) {
+export default function BlogDetailPage({ params }: PageProps) {
   const blog = blogs.find((b: Blog) => b.id === params.id);
 
   if (!blog) {

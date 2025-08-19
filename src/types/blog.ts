@@ -7,11 +7,6 @@ export interface Blog {
   content: string;
 }
 
-export interface BlogPageParams {
-  params: {
-    id: string;
-  };
-  searchParams?: {
-    [key: string]: string | string[] | undefined;
-  };
+export interface PageProps {
+  params: { id: string };
 }
