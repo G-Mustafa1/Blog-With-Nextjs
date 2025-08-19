@@ -3,7 +3,7 @@ import blogs from "@/data/blogs";
 import Link from "next/link";
 import BlogCard from "@/app/components/BlogCard";
 
-export default function BlogDetailPage({ params }: { params: { id: string } }) {
+export default function BlogDetailPage({ params }: any) {
   const blog = blogs.find((b) => b.id === params.id);
 
   if (!blog) {
