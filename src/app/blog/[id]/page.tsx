@@ -4,8 +4,13 @@ import Link from "next/link";
 import { Blog } from "@/types/blog";
 import BlogCard from "@/app/components/BlogCard";
 
+interface BlogDetailPageProps {
+  params: {
+    id: string;
+  };
+}
 
-export default function BlogDetailPage({ params }: { params: { id: string } }) {
+export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   const blog = blogs.find((b: Blog) => b.id === params.id);
 
   if (!blog) {
