@@ -9,7 +9,7 @@ export default function BlogCard({ blog, related }: Props) {
     <div className="max-w-6xl mx-auto p-6 grid lg:grid-cols-4 gap-8 mt-16">
       <article className="lg:col-span-3 bg-white shadow-lg rounded-xl p-8">
         <h1 className="text-4xl font-bold text-indigo-700">{blog.title}</h1>
-        <p className="text-gray-800 mt-2">{blog.excerpt}</p>
+        <p className="text-gray-700 mt-4">{blog.excerpt}</p>
         <p className="text-gray-500 mt-2">
           By <span className="font-semibold">{blog.author}</span> • {blog.date}
         </p>

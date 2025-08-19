@@ -1,5 +1,4 @@
 import { Blog } from "@/types/blog";
-
 const blogs: Blog[] = [
     {
         id: "1",

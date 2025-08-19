@@ -1,14 +1,16 @@
 import React from "react";
 import blogs from "@/data/blogs";
 import Link from "next/link";
+import { Blog } from "@/types/blog";
 import BlogCard from "@/app/components/BlogCard";
 
-export default function BlogDetailPage({ params }: any) {
-  const blog = blogs.find((b) => b.id === params.id);
+
+export default function BlogDetailPage({ params }: { params: { id: string } }) {
+  const blog = blogs.find((b: Blog) => b.id === params.id);
 
   if (!blog) {
     return (
-      <div className="max-w-3xl mx-auto p-6 text-center">
+      <div className="max-w-3xl mx-auto p-6 text-center mt-16">
         <h2 className="text-2xl font-bold text-red-600">Blog Not Found</h2>
         <Link
           href="/blog"

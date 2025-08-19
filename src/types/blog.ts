@@ -6,7 +6,3 @@ export interface Blog {
   date: string;
   content: string;
 }
-
-export interface PageProps {
-  params: { id: string };
-}

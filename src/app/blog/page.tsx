@@ -14,7 +14,7 @@ export default function BlogPage() {
             className="bg-white p-6 shadow rounded-xl hover:shadow-lg transition"
           >
             <h2 className="text-2xl font-semibold text-gray-800">{blog.title}</h2>
-            <p className="text-gray-800 mt-2">{blog.excerpt}</p>
+            <p className="text-gray-600 mt-2">{blog.excerpt}</p>
             <p className="text-gray-500 mt-1">
               By <span className="font-medium">{blog.author}</span> • {blog.date}
             </p>
