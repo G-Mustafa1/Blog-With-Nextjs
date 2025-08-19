@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-gray-100">
+      <body className={`bg-gray-100 ${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
         <main className="p-6 max-w-7xl mx-auto">{children}</main>
         <Footer />
