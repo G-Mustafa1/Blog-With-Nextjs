@@ -1,14 +1,8 @@
 import React from "react";
-import Link from "next/link";
 import blogs from "@/data/blogs";
+import Link from "next/link";
 import { Blog } from "@/types/blog";
 import BlogCard from "@/app/components/BlogCard";
-
-type BlogDetailPageProps = {
-  params: {
-    id: string;
-  };
-};
 
 // ✅ Pre-generate all blog pages for deployment
 export async function generateStaticParams() {
@@ -18,15 +12,19 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function BlogDetailPage({ params }: BlogDetailPageProps) {
-  console.log("📌 BlogDetailPage params:", params);
+export default async function BlogDetailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  console.log("📌 BlogDetailPage params:", id);
 
-  const blog = blogs.find((b: Blog) => b.id === params.id);
-
+  const blog = blogs.find((b: Blog) => b.id === id);
   console.log("🔍 Found blog:", blog);
 
   if (!blog) {
-    console.warn("⚠️ Blog not found with id:", params.id);
+    console.warn("⚠️ Blog not found with id:", id);
 
     return (
       <div className="max-w-3xl mx-auto p-6 text-center mt-16">
